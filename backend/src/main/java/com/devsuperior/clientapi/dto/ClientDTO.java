@@ -3,14 +3,21 @@ package com.devsuperior.clientapi.dto;
 import java.io.Serializable;
 import java.time.Instant;
 
+import javax.validation.constraints.NotBlank;
+
 import com.devsuperior.clientapi.entities.Client;
 
 public class ClientDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	
+	@NotBlank(message = "Campo requerido")
 	private String name;
+	
+	@NotBlank(message = "Campo requerido")
 	private String cpf;
+	
 	private Double income;
 	private Instant birthDate;
 	private Integer children;
